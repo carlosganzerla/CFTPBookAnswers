@@ -71,7 +71,10 @@ let bimapEither f g either =
 
 //6
 // Map<TKey, TElement>
+// can also be seen as the mapping 'a->'b
 // Mapping the morphisms:
 // bimap f g= new map with f applied to all keys and g to all values
+// if f is a->b, the key type is b, and if g is c->d, value type is d
 //It's a bifunctor
-//To become a profunctor it's necessary that
+//To become a profunctor, it's necessary that we invert the keys and elements,
+//because ->'b is contravariant

@@ -18,9 +18,9 @@ module Chapter7
 //fmap f (g o h) = fmap f (fmap g h) = (fmap f o fmap g) h => 
 //Conforms to composition
 
-let readerFunctor f g = f << g
+type Reader<'r,'a> = Reader of ('r->'a)
 
-type FunctorCtor<'c,'a> = 'c->'a
+let fmapReader f g = Reader (f << g)
 
 //4
 // type List = Nil | Cons a (List a)
